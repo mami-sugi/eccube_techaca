@@ -173,7 +173,8 @@ class LC_Page_Admin_Contents extends LC_Page_Admin_Ex
         $objErr = new SC_CheckError_Ex($objFormParam->getHashArray());
         $objErr->arrErr = $objFormParam->checkError();
         $objErr->doFunc(array('日付(表示開始期限)', 'year', 'month', 'day'), array('CHECK_DATE'));
-        $objErr->CHECK_SET_TERM(array('日付(表示開始期限)', '表示終了期限', 'year', 'month', 'day', 'finish_year', 'finish_month', 'finish_day'));
+        $objErr->doFunc(array('表示終了期限', 'finish_year', 'finish_month', 'finish_day'), array('CHECK_DATE'));
+        $objErr->doFunc(array('日付(表示開始期限)', '表示終了期限', 'year', 'month', 'day', 'finish_year', 'finish_month', 'finish_day'),array('CHECK_SET_TERM'));
 
         return $objErr->arrErr;
     }
@@ -264,14 +265,6 @@ class LC_Page_Admin_Contents extends LC_Page_Admin_Ex
         return explode('-', $news_date);
     }
 
-    /**
-     * 表示終了期限の日付の値をフロントでの表示形式に合わせるために分割
-     * @param String $news_date
-     */
-    public function splitFinishDate($finish_date)
-    {
-        return explode('-', $finish_date);
-    }
     /**
      * POSTされたランクの値を取得する
      * @param Integer $news_id
