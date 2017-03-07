@@ -29,7 +29,6 @@
                 <!--{section name=data loop=$arrNews}-->
                 <!--{if $smarty.now >= $arrNews[data].news_date|strtotime && $smarty.now <= $arrNews[data].finish_date|strtotime}-->
                 <!--{assign var="date_array" value="-"|explode:$arrNews[data].cast_news_date}-->
-                <!--{assign var="finishDate_array" value="-"|explode:$arrNews[data].cast_finish_date}-->
                 <dl class="newslist">
                     <dt><!--{$date_array[0]}-->年<!--{$date_array[1]}-->月<!--{$date_array[2]}-->日</dt>
                     <dt>
@@ -40,8 +39,7 @@
                         >
                             <!--{$arrNews[data].news_title|h|nl2br}--></a>
                     </dt>
-                    <dd class="mini"><!--{$arrNews[data].news_comment|h|nl2br}--><br>
-                        <!--{$finishDate_array[0]}-->年<!--{$finishDate_array[1]}-->月<!--{$finishDate_array[2]}-->日に表示を終了します。
+                    <dd class="mini"><!--{$arrNews[data].news_comment|h|nl2br}-->
                     </dd>
                 </dl>
                 <!--{/if}-->
