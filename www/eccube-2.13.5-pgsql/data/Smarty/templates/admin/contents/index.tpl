@@ -50,16 +50,16 @@
             <tr>
                 <th>表示終了期限<span class="attention"> *</span></th>
                 <td>
-                    <!--{if $arrErr.year || $arrErr.month || $arrErr.day}--><span class="attention"><!--{$arrErr.year}--><!--{$arrErr.month}--><!--{$arrErr.day}--></span><!--{/if}-->
+                    <!--{if $arrErr.finish_year || $arrErr.finish_month || $arrErr.finish_day}--><span class="attention"><!--{$arrErr.finish_year}--><!--{$arrErr.finish_month}--><!--{$arrErr.finish_day}--></span><!--{/if}-->
                     <select name="finish_year" <!--{if $arrErr.year || $arrErr.month || $arrErr.day }-->style="background-color:<!--{$smarty.const.ERR_COLOR|h}-->"<!--{/if}-->>
                     <option value="" selected="selected">----</option>
                     <!--{html_options options=$arrYear selected=$arrForm.finish_year.value}-->
                     </select>年
-                    <select name="finish_month" <!--{if $arrErr.year || $arrErr.month || $arrErr.day}-->style="background-color:<!--{$smarty.const.ERR_COLOR|h}-->"<!--{/if}-->>
+                    <select name="finish_month" <!--{if $arrErr.finish_year || $arrErr.finish_month || $arrErr.finish_day}-->style="background-color:<!--{$smarty.const.ERR_COLOR|h}-->"<!--{/if}-->>
                     <option value="" selected="selected">--</option>
                     <!--{html_options options=$arrMonth selected=$arrForm.finish_month.value}-->
                     </select>月
-                    <select name="finish_day" <!--{if $arrErr.year || $arrErr.month || $arrErr.day}-->style="background-color:<!--{$smarty.const.ERR_COLOR|h}-->"<!--{/if}-->>
+                    <select name="finish_day" <!--{if $arrErr.finish_year || $arrErr.finish_month || $arrErr.finish_day}-->style="background-color:<!--{$smarty.const.ERR_COLOR|h}-->"<!--{/if}-->>
                     <option value="" selected="selected">--</option>
                     <!--{html_options options=$arrDay selected=$arrForm.finish_day.value}-->
                     </select>日
