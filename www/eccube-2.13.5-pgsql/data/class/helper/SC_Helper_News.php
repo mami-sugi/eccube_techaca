@@ -61,7 +61,7 @@ class SC_Helper_News
     public function getList($dispNumber = 0, $pageNumber = 0, $has_deleted = false)
     {
         $objQuery =& SC_Query_Ex::getSingletonInstance();
-        $col = '*, cast(news_date as date) as cast_news_date,cast(finish_date as date) as cast_finish_date';
+        $col = '*, cast(news_date as date) as cast_news_date, cast(finish_date as date) as cast_finish_date';
         $where = '';
         if (!$has_deleted) {
             $where .= 'del_flg = 0';
