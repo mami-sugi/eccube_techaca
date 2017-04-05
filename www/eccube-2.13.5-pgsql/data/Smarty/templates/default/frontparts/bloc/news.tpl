@@ -27,8 +27,9 @@
         <div class="block_body">
             <div class="news_contents">
                 <!--{section name=data loop=$arrNews}-->
-                <!--{if $smarty.now >= $arrNews[data].news_date|strtotime && $smarty.now <= $arrNews[data].finish_date|strtotime}-->
                 <!--{assign var="date_array" value="-"|explode:$arrNews[data].cast_news_date}-->
+                <!--{assign var="finishDate_array" value="-"|explode:$arrNews[data].cast_finish_date}-->
+                <!--{if $arrNews[data].news_date <= $smarty.now |strtotime && $smarty.now-24*60*60 <= $arrNews[data].finish_date|strtotime}-->
                 <dl class="newslist">
                     <dt><!--{$date_array[0]}-->年<!--{$date_array[1]}-->月<!--{$date_array[2]}-->日</dt>
                     <dt>
